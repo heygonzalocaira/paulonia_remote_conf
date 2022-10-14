@@ -45,11 +45,11 @@ class _MyHomePageState extends State<MyHomePage> {
           children: <Widget>[
             Text(
               'This is a test value: ' +
-                  PauloniaRemoteConf.get("Test", PRCType.INT).toString(),
+                  PauloniaRemoteConf().get("Test", PRCType.INT).toString(),
             ),
             Text(
               "This is other test: " +
-                  PauloniaRemoteConf.get("Test 2", PRCType.STRING).toString(),
+                  PauloniaRemoteConf().get("Test 2", PRCType.STRING).toString(),
             ),
             Text(
               'This is an other test value: ' +
