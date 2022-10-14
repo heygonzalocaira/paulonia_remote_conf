@@ -3,14 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:paulonia_remote_conf/constants.dart';
 import 'package:paulonia_remote_conf/paulonia_remote_conf.dart';
 
-
-void main() async{
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await PauloniaRemoteConf.init({
-    "Test": 5,
-    "Test 2": "Test"
-  });
+  await PauloniaRemoteConf.init({"Test": 5, "Test 2": "Test"});
   runApp(MyApp());
 }
 
@@ -37,7 +33,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,13 +44,16 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              'This is a test value: ' + PauloniaRemoteConf.get("Test", PRCType.INT).toString(),
+              'This is a test value: ' +
+                  PauloniaRemoteConf.get("Test", PRCType.INT).toString(),
             ),
             Text(
-              "This is other test: " + PauloniaRemoteConf.get("Test 2", PRCType.STRING).toString(),
+              "This is other test: " +
+                  PauloniaRemoteConf.get("Test 2", PRCType.STRING).toString(),
             ),
             Text(
-              'This is an other test value: ' + PauloniaRemoteConf.getValue("Test").asString(),
+              'This is an other test value: ' +
+                  PauloniaRemoteConf.getValue("Test").asString(),
             ),
           ],
         ),
